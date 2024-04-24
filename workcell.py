@@ -4,6 +4,7 @@ from datetime import date
 from scipy.interpolate import interp1d
 import math
 from datetime import datetime
+import time
 
 t_max = 10000
 
@@ -190,6 +191,7 @@ def create_machines(n):
 machine = create_machines(1)[0]
 cycle_length_min = 1
 cycle_length_max = 5
+sample_rate = 2
 
 while 1:
     if machine.broken:
@@ -238,3 +240,4 @@ while 1:
                 },
             )
             break
+        time.sleep(sample_rate)
